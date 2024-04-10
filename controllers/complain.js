@@ -170,3 +170,27 @@ export const deleteComplaint = async (req,res,next)=>{
      }
 
 }
+export const reopenComplaint = async(req,res,next)=>{
+
+    try {
+        const {id}  = req.params;
+        const complaint = await Complaint.find({user:req.user._id,_id:id});
+
+        if(!complaint)return next(new ErrorHandler("Complaint not found",404));
+       
+       
+       
+       await Complaint.findByIdAndUpdate(id,{status:'pending 🟡',urgency:1});
+
+       
+       
+        res.status(200).json({
+            success:true,
+            message:"Reopened"
+        })
+
+    } catch (error) {
+        next(error)
+    }
+
+}
