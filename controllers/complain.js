@@ -26,7 +26,7 @@ export const create =  async (req,res,next)=>{
         });
         
     } catch (error) {
-        next(error)
+       
     }
 
 }
@@ -82,11 +82,11 @@ export const getDepartmentComplaints = async(req,res,next)=>{
         
     } catch (error) {
        
-        next(error);
+        
     }
 }
 export const updateComplaintStatus = async(req,res,next)=>{
-    console.log("here")
+
     try {
         const {id} = req.params;
         const {status} = req.body;
@@ -100,7 +100,7 @@ export const updateComplaintStatus = async(req,res,next)=>{
     })
 
     } catch (error) {
-        next(error)
+       
     }
 }
 export const escalateComplaint= async(req,res,next)=>{
@@ -123,7 +123,7 @@ export const escalateComplaint= async(req,res,next)=>{
             message:"Urgency escalated"
         })
     } catch (error) {
-        next(error)
+     
     }
 
 }
@@ -135,7 +135,7 @@ export const adminGetAll = async (req,res,next)=>{
             complaints
         })
     } catch (error) {
-        next(error);
+        
     }
 }
 export const allComplaints = async(req,res,next)=>{
@@ -148,7 +148,7 @@ export const allComplaints = async(req,res,next)=>{
         })
         
     } catch (error) {
-        next(error)
+       
     }
 }
 

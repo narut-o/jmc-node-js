@@ -6,8 +6,7 @@ import { cloudinaryConfig } from '../services/cloudinary.js';
 
 
 export const signature = (req,res)=>{
-       console.log("signature ",cloudinaryConfig.api_key)
-       console.log("signature ",process.env.CLOUD_NAME)
+      
 
     try {
         const timestamp  = Math.round(new Date().getTime()/1000)
